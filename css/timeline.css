@@ -1,0 +1,107 @@
+:root {
+  --pink: #da4871;
+  --pink-hover: #f43e89;
+  --white: #f9f9f9;
+  --brown: #1f171a;
+}
+
+.getout-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 5%;
+}
+
+.text-writing {
+  resize: none;
+  width: 70%;
+  height: 10em;
+  padding: 5px;
+}
+
+.text-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 1em;
+}
+
+.post-container {
+  margin-top: 1em;
+  margin-right: 15%;
+}
+
+.post-div {
+  color: var(--brown);
+  background: var(--white);
+  margin: 1em 2em;
+  border-radius: 4px;
+}
+
+.modal-buttons {
+  width: 30%;
+  height: 3em;
+  background: transparent;
+  border: 1px solid;
+  border-radius: 4px;
+  margin: 0.3em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icons-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.icon-img {
+  width: 25px;
+}
+
+.user-img {
+  width: 25px;
+  margin: 1em 0.2em auto 0.5em;
+  clip-path: circle(50%);
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+}
+
+.items-organization {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 5%;
+}
+
+.user-email {
+  font-size: 4vw;
+  margin-top: 1em;
+}
+
+.message-feed {
+  display: flex;
+  justify-content: center;
+  word-break: break-all;
+  margin: 1em;
+}
+
+.like-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.button-like {
+  display: flex;
+  background: transparent;
+  border: none;
+  align-items: center;
+  margin-bottom: 1em;
+  justify-content: center;
+}
+
+.like-icon {
+  width: 40%;
+  cursor: pointer;
+  user-select: none;
+}
