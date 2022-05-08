@@ -10,16 +10,12 @@ import {
   updateDoc,
   arrayUnion,
   arrayRemove,
-  // eslint-disable-next-line
-} from 'https://www.gstatic.com/firebasejs/9.6.9/firebase-firestore.js';
+} from './export.js';
 
 const db = getFirestore();
 
-// AWAIT (ASYNC/ ASSINCRONA)
 export async function addPosts(message, userEmail) {
   try {
-    // DOCREF - DOCUMENTO DE REFERENCIA (NO CASO A ESTA FAZENDO O 'CAMINHO' PARA A COLEÇÃO > POSTS)
-    // ADDDOC ADICIONA UM NOVO DOCUMENTO A COLEÇÃO
     const docRef = await addDoc(collection(db, 'posts'), {
       message,
       userEmail,
@@ -31,8 +27,7 @@ export async function addPosts(message, userEmail) {
     return null;
   }
 }
-// eslint-disable-next-line
-// FUNÇÃO CRIANDO UM ARRAY DAS INFOS, ORDENANDO POR DATA (USANDO A FUNÇÃO ORDERBY) E JOGANDO NA TIMELINE
+
 export const orderPosts = async () => {
   const arrPosts = [];
   const orderFirestore = query(collection(db, 'posts'), orderBy('date'));
@@ -46,7 +41,6 @@ export const orderPosts = async () => {
   return arrPosts;
 };
 
-// FUNÇÃO DE EDITAR (UPDATEDOC - FIRESTORE)
 export function editPosts(itemId, message) {
   const editPost = doc(db, 'posts', itemId);
   return updateDoc(editPost, {
@@ -54,12 +48,10 @@ export function editPosts(itemId, message) {
   });
 }
 
-// FUNÇÃO DE DELETAR (DELETEDOC - FIRESTORE)
 export function deletePosts(itemId) {
   return deleteDoc(doc(db, 'posts', itemId));
 }
 
-// FUNÇÃO DE LIKE (ARRAYUNION - FIRESTORE) (https://cloud.google.com/firestore/docs/manage-data/add-data?hl=pt-br)
 export async function like(itemId, userEmail) {
   try {
     const postId = doc(db, 'posts', itemId);
@@ -67,11 +59,10 @@ export async function like(itemId, userEmail) {
       likes: arrayUnion(userEmail),
     });
   } catch (e) {
-    return console.log('Erro Like', e);
+    return null;
   }
 }
 
-// FUNÇÃO DE DESLIKE (ARRAYREMOVE - FIRESTORE)
 export async function dislike(itemId, userEmail) {
   try {
     const postId = doc(db, 'posts', itemId);
@@ -79,6 +70,6 @@ export async function dislike(itemId, userEmail) {
       likes: arrayRemove(userEmail),
     });
   } catch (e) {
-    return console.log('Erro dislike', e);
+    return null;
   }
 }

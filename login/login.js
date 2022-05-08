@@ -4,60 +4,60 @@ import { userLogin, googleLogin } from '../firebase/auth-firebase.js';
 export const login = () => {
   const loginContainer = document.createElement('div');
   const templateLogin = `
-  <section class="header-home">
-  <form>
-    <h2 class="subtitle">Login</h2>
+  <section class='header-home'>
+  <form id='form-login'>
+    <h2 class='subtitle'>Login</h2>
     <input
-      class="login-email input-names"
-      type="email"
-      id="login-email"
-      placeholder="Digite seu e-mail"
+      class='login-email input-names'
+      type='email'
+      id='login-email'
+      placeholder='Digite seu e-mail'
       autocomplet
       required
     />
     <input
-      class="login-password input-names"
-      type="password"
-      id="login-password"
-      placeholder="Digite uma senha"
-      minlength="6"
+      class='login-password input-names'
+      type='password'
+      id='login-password'
+      placeholder='Digite uma senha'
+      minlength='6'
       required
     />
-    <div class="home-container login-container">
+    <div class='home-container login-container'>
       <button
-        id="login-enter"
-        class="button login-enter"
-        type="submit"
-        role="link"
+        id='login-enter'
+        class='button login-enter'
+        type='submit'
+        role='link'
       >
         Entrar
       </button>
     </div>
-    <span class="feedback"></span>
-    <div class="text-content">
-      <p class="text-forgot">
-        Esqueci a <a class="links" href="#reset">Senha</a>
+    <span class='feedback'></span>
+    <div class='text-content'>
+      <p class='text-forgot'>
+        Esqueci a <a class='links' href='#reset'>Senha</a>
       </p>
-      <div class="social-media google-container">
-        <p>Ou entrar com o Google</p>
-        <button class="button-google" type="button" id="button-google">
+      <div class='social-media google-container'>
+        <button class='button-google' type='button' id='button-google'>
+       <p class='text-google'> Ou entrar com o Google </p>
           <img
-            class="google-img"
-            src="img/icone-google.png"
-            alt="Logo de Google"
+            class='google-img'
+            src='img/icone-google.png'
+            alt='Logo de Google'
           />
         </button>
       </div>
     </div>
   </form>
-  <div class="social-media">
-    <p class="text-register">
+  <div class='social-media'>
+    <p class='text-register'>
       Ainda não tem conta?
-      <a href="#register" class="links">Cadastre-se</a>
+      <a href='#register' class='links'>Cadastre-se</a>
     </p>
   </div>
-  <div class="back-container">
-    <a href="#home" class="back-home">Voltar a tela inicial</a>
+  <div class='back-container'>
+    <a href='#home' class='back-home'>Voltar a tela inicial</a>
   </div>
 </section>
   `;
@@ -79,7 +79,7 @@ export const login = () => {
         .catch((error) => {
           if (error.code === 'auth/wrong-password') {
             feedback.classList.add('error');
-            feedback.innerHTML = 'Senha incorreta';
+            feedback.innerHTML = 'E-mail ou senha incorreta';
           } else if (error.code === 'auth/invalid-email') {
             feedback.classList.add('error');
             feedback.innerHTML = 'E-mail inválido';
@@ -88,7 +88,7 @@ export const login = () => {
             feedback.innerHTML = 'Usuário não encontrado';
           } else {
             feedback.classList.add('error');
-            feedback.innerHTML = 'Opsss!ocorreu um erro Tente novamente.';
+            feedback.innerHTML = 'Opsss! Não foi possivel realizar o Login, tente novamente..';
           }
           const errorMessage = error.message;
           return errorMessage;

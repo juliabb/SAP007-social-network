@@ -4,59 +4,59 @@ import { userCreate, googleLogin } from '../firebase/auth-firebase.js';
 export const register = () => {
   const registerContainer = document.createElement('div');
   const templateRegister = `
-  <section class="header-home">
-      <h2 class="subtitle">Cadastrar</h2>
-      <form>
+  <section class='header-home'>
+      <h2 class='subtitle'>Cadastrar</h2>
+      <form id='form-register'>
         <input
-          class="input-names"
-          type="text"
-          placeholder="Digite seu nome Ex:Laura "
+          class='input-names'
+          type='text'
+          placeholder='Digite seu nome Ex:Laura '
           autocomplet
           required
         />
         <input
-          class="register-email input-names"
-          type="text"
-          id="register-email"
-          type="email"
-          placeholder="Digite seu e-mail"
+          class='register-email input-names'
+          type='text'
+          id='register-email'
+          type='email'
+          placeholder='Digite seu e-mail'
           autocomplet
           required
         />
         <input
-          class="register-password input-names"
-          type="password"
-          id="register-password"
-          minlength="6"
-          type="password"
-          placeholder="Crie uma senha"
+          class='register-password input-names'
+          type='password'
+          id='register-password'
+          minlength='6'
+          type='password'
+          placeholder='Crie uma senha'
           required
         />
 
-        <div class="home-container login-container">
+        <div class='home-container login-container'>
           <button
-            id="register-enter"
-            class="button register-enter login-enter"
-            type="submit"
+            id='register-enter'
+            class='button register-enter login-enter'
+            type='submit'
           >
             Cadastrar
           </button>
         </div>
-        <span class="feedback"></span>
-        <div class="social-media register-enter">
-          <p>Ou cadastre-se com o Google</p>
-          <button class="button-google" type="button" id="button-google">
+        <span class='feedback'></span>
+        <div class='social-media register-enter'>
+          <button class='button-google' type='button' id='button-google'>
+          <p class='text-google'> Ou entrar com o Google </p>
             <img
-              class="google-img"
-              src="img/icone-google.png"
-              alt="Imagen logo de Google"
+              class='google-img'
+              src='img/icone-google.png'
+              alt='Imagen logo de Google'
             />
           </button>
         </div>
       </form>
-      <div class="social-media"></div>
-      <div class="back-container">
-        <a href="#home" class="back-home">Voltar a tela inicial</a>
+      <div class='social-media'></div>
+      <div class='back-container'>
+        <a href='#home' class='back-home'>Voltar a tela inicial</a>
       </div>
     </section>
     `;

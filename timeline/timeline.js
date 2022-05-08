@@ -2,29 +2,29 @@ import '../firebase/firebase.js';
 import { auth, userLogout } from '../firebase/auth-firebase.js';
 import { addPosts, orderPosts } from '../firebase/firestore.js';
 import { templatePostFeed } from './template-all-posts.js';
-// TIMELINE - TEXTAREA PARA O USUARIO LOGADO ESCREVER E 2 BOTÕES (SAIR E POSTAR)
+
 export const timeline = () => {
   const feedCreate = document.createElement('div');
   const templateFeed = `
-      <main class="header-home">
+      <main class='header-home'>
 
-      <div class="getout-container">
-      <button id="button-getout" class="button btn-getout">Sair</button>
+      <div class='getout-container'>
+      <button id='button-getout' class='button btn-getout'>Sair</button>
       </div>
 
-      <span class="feedback"></span>
+      <span class='feedback'></span>
 
-      <div class="text-container">
-      <textarea id="message" class="text-writing" maxlength='300' placeholder="Compartilhe sua experiência com filmes e séries aqui"></textarea>
+      <div class='text-container'>
+      <textarea id='message' class='text-writing' maxlength='300' placeholder='Compartilhe sua experiência com filmes e séries aqui'></textarea>
       </div>
 
-      <div class="post-container getout-container">
-      <button id="buttonPost" class="button-submit-feed button">Publicar</button>
+      <div class='post-container getout-container'>
+      <button id='buttonPost' class='button-submit-feed button'>Publicar</button>
       </div>
     
-      <div class="posts-container">
-        <section id="new-post-user" class="all-post"></section>
-      <section id="all-post" class="all-post"></section>
+      <div class='posts-container'>
+        <section id='new-post-user' class='all-post'></section>
+      <section id='all-post' class='all-post'></section>
     </div>
 
       </main>
@@ -64,15 +64,13 @@ export const timeline = () => {
   });
 
   const showAllPosts = async () => {
-    // mostrar posts na tela (do banco)
     const allPosts = await orderPosts();
-    allPosts.forEach((item) => { // passando pelos elementos do posts
+    allPosts.forEach((item) => {
       const postElement = templatePostFeed(item);
-      sectionPost.prepend(postElement);// incluindo um filho na lista
+      sectionPost.prepend(postElement);
     });
   };
 
-  // função para sair
   logout.addEventListener('click', (e) => {
     e.preventDefault();
     userLogout().then(() => {

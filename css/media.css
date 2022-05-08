@@ -1,17 +1,34 @@
+@media (min-width: 425px) and (max-width: 768px) {
+  .user-info {
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .user-email {
+    margin-top: 1em;
+  }
+  .icons-container {
+    padding-top: 1em;
+    padding-right: 1em;
+  }
+  .items-organization {
+    margin: 1em 5% auto auto;
+  }
+  .post-div {
+    margin: 1em 3em;
+  }
+  .post-container {
+    margin-bottom: 1em;
+  }
+}
 @media (min-width: 600px) and (max-width: 800px) {
   .nav-logo {
     width: 8em;
   }
   .button {
     padding: 8px 40px;
-    font-size: 15px;
   }
   .text-content {
     margin: 3em 2em 2em;
-  }
-  .text-content p {
-    font-size: large;
-    margin: 2em 3em;
   }
 
   .input-names {
@@ -25,7 +42,7 @@
   .home-image {
     width: 22em;
     position: absolute;
-    top: 9em;
+    top: 11em;
     right: 1em;
   }
   .text-content {
@@ -43,49 +60,148 @@
   .credit {
     justify-content: center;
   }
-  /* ------------ LOGIN, REGISTER - Falta depois do 1024px --------------*/
-  .input-names{
+  .input-names {
     margin: 0.5em 10%;
   }
-  .login-container{
+  .login-container {
     justify-content: center;
     margin: 1em auto 3em;
   }
-  .text-forgot{
+  .text-forgot {
     margin: 1em 5% auto;
+  }
+  section .post-div {
+    margin: 1em 8em;
+  }
+  .post-container {
+    margin-bottom: 3em;
+  }
+  .modal-content {
+    margin: 13% auto;
   }
 }
 @media (min-width: 900px) and (max-width: 1024px) {
   .text-content {
     font-size: larger;
   }
+  .post-div {
+    margin: 1em 13em;
+  }
 }
-@media (min-width: 1025px) and (max-width: 1440px) {
+@media (min-width: 1025px) and (max-width: 1600px) {
   .home-buttons {
     justify-content: flex-start;
   }
-  .login{
+  .login {
     margin: auto 3em;
   }
   .text-content {
     margin: 2em 3em;
     font-size: large;
   }
-  .text-participate{
+  .text-participate {
     justify-content: flex-start;
   }
-  .home-container{
+  .home-container {
     justify-content: flex-start;
     margin-left: 3em;
-    margin-bottom: 6em;
+    margin-bottom: 10em;
   }
-  .home-image{
+  .home-image {
     width: 25em;
     position: absolute;
     top: 4em;
     right: 2em;
   }
-  .credit{
+  .credit {
     justify-content: center;
+  }
+  .post-div {
+    margin: 1em 12em;
+  }
+  section .post-div {
+    margin: 1em 10em;
+  }
+  .post-container {
+    margin-bottom: 3em;
+  }
+  .input-names {
+    margin: 0.5em 7em;
+  }
+  .login-container {
+    justify-content: flex-end;
+    margin-right: 7em;
+    margin-top: 1em;
+    margin-bottom: 0;
+  }
+  .text-forgot {
+    margin-bottom: 1em;
+    margin-left: 5%;
+  }
+}
+
+@media (min-width: 1601px) and (max-width: 2560px) {
+  .login {
+    padding: 5px 40px;
+  }
+  .text-content {
+    margin: 3em 5em 2em;
+    font-size: large;
+  }
+  .text-participate {
+    justify-content: flex-start;
+    margin: 2em 70% 0em 0em;
+  }
+  .home-container {
+    justify-content: flex-start;
+    margin-left: 10%;
+  }
+  .container-image {
+    display: flex;
+    justify-content: center;
+    margin-top: 1em;
+    margin-bottom: 24vw;
+  }
+  .home-image {
+    position: absolute;
+    width: 30em;
+    bottom: 40%;
+    left: 60%;
+  }
+
+  .credit {
+    justify-content: center;
+    margin: auto;
+    font-size: large;
+  }
+  section .post-div {
+    margin: 2em 16em;
+  }
+  .user-img {
+    width: 2em;
+  }
+  .user-email {
+    font-size: 16px;
+  }
+  .items-organization {
+    font-size: 12px;
+  }
+  div .modal-buttons {
+    width: 20%;
+  }
+  .icon-img {
+    margin-right: 1em;
+  }
+  .input-names {
+    padding: 10px 8px;
+    margin: 0.5em 16em;
+  }
+  .login-container {
+    justify-content: flex-end;
+    margin-right: 13%;
+    margin-top: 2em;
+  }
+  .text-forgot {
+    margin-left: 9%;
   }
 }

@@ -17,15 +17,16 @@
 }
 
 .modal-content {
+  border: 2px solid var(--pink);
   background-color: var(--white);
-  margin: 50% auto;
+  margin: 30% auto;
   padding: 20px;
   width: 70%;
   border-radius: 20px;
   box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2);
 }
 
-.writing-modal{
+.writing-modal {
   width: 100%;
 }
 
@@ -33,7 +34,7 @@
   text-align: center;
 }
 
-.edit{
+.edit {
   color: var(--brown);
   font-weight: bold;
 }
@@ -45,7 +46,6 @@
   align-items: center;
   background: var(--white);
   color: var(--brown);
-  border: 2px solid var(--pink);
   box-sizing: border-box;
   border-radius: 10px;
   margin: auto;
@@ -53,11 +53,11 @@
   gap: 20px;
 }
 
-.save-container{
+.save-container {
   margin: 1em auto;
 }
 
-.button-cancel{
+.button-cancel {
   color: var(--white);
   background-color: var(--brown);
   padding: 4px 7px;

@@ -3,19 +3,19 @@ import { editPosts, deletePosts } from '../firebase/firestore.js';
 export function modalEditPost(item, postContainer) {
   const modalContainer = document.createElement('div');
   const ModalEdit = `
-  <div id="modal-container" class="modal-container">
-    <div id="modal-content" class="modal-content">
-    <p class="text-reset edit">Edição de postagem</p>
+  <div id='modal-container' class='modal-container'>
+    <div id='modal-content' class='modal-content'>
+    <p class='text-reset edit'>Edição de postagem</p>
       <div>
-        <textarea name="textarea" maxlength='300' id="message" class="message text-writing writing-modal"
-          placeholder="Compartilhe sua experiência aqui">${item.message}</textarea>
+        <textarea name='textarea' maxlength='300' id='message' class='message text-writing writing-modal'
+          placeholder='Compartilhe sua experiência aqui'>${item.message}</textarea>
       </div>
 
-      <span class="feedback"></span>
+      <span class='feedback'></span>
 
-      <div class="save-container">
-        <button id="save-message" class="button">Salvar</button>
-        <button id="button-cancel" class="button-cancel button">Cancelar</button>
+      <div class='save-container'>
+        <button id='save-message' class='button'>Salvar</button>
+        <button id='button-cancel' class='button-cancel button'>Cancelar</button>
 
       </div>
     </div>
@@ -60,17 +60,17 @@ export function modalDeletePost(post, postContainer) {
   const modalContainer = document.createElement('div');
 
   const ModalDelete = `
-  <div id="modal-container" class="modal-container">
-  <div class="modal-content">
-    <div class="delete-container">
-      <h2 class="delete-text">Apagar postagem?</h2>
-      <p class="delete-text">
+  <div id='modal-container' class='modal-container'>
+  <div class='modal-content'>
+    <div class='delete-container'>
+      <h2 class='delete-text'>Apagar postagem?</h2>
+      <p class='delete-text'>
         Você tem certeza que deseja excluir a postagem? Essa ação não poderá
         ser desfeita.
       </p>
       <div>
-        <button id="button-yes" class="button">Sim</button>
-        <button id="button-no" class="button-cancel button">Não</button>
+        <button id='button-yes' class='button'>Sim</button>
+        <button id='button-no' class='button-cancel button'>Não</button>
       </div>
     </div>
   </div>

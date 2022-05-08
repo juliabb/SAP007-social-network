@@ -69,7 +69,7 @@ body {
   color: var(--white);
 }
 
-.login-enter{
+.login-enter {
   margin-top: 1em;
 }
 
@@ -81,8 +81,18 @@ body {
   color: var(--pink);
   text-decoration: none;
 }
+
+.button-google {
+  display: flex;
+  align-items: center;
+  padding: 0.5em 2em;
+}
+
+.text-google {
+  margin-right: 1em;
+}
 .google-img {
-  width: 2em;
+  width: 1.5em;
   display: flex;
   align-items: center;
 }
@@ -99,38 +109,39 @@ body {
   padding: 20px;
 }
 
-.register-enter > p, .register-enter > button{
+.register-enter > p,
+.register-enter > button {
   margin-top: 1em;
 }
 
-.error-message{
+.error-message {
   margin-top: 2em;
 }
 
-.reset-text{
+.reset-text {
   margin: auto 1em 1em;
 }
 
-.container-btn{
+.container-btn {
   display: flex;
   justify-content: center;
   margin-top: 1em;
 }
 
-.text-reset{
+.text-reset {
   margin-bottom: 1em;
 }
 
-.feedback{
+.feedback {
   display: flex;
   justify-content: center;
   margin-top: 2em;
 }
 
-.feedback.send{
+.feedback.send {
   color: green;
 }
 
-.feedback.error{
+.feedback.error {
   color: red;
 }

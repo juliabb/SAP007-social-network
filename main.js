@@ -1,4 +1,3 @@
-// EVENTOS DOM - ROTAS
 import './firebase/firebase.js';
 
 import { home } from './home/home.js';
@@ -11,6 +10,7 @@ import { loggedIn } from './firebase/auth-firebase.js';
 const content = document.querySelector('#root');
 
 const contentChange = () => {
+  content.innerHTML = '';
   switch (window.location.hash) {
     case '#login':
       content.appendChild(login());
@@ -36,11 +36,5 @@ const contentChange = () => {
   }
 };
 
-window.addEventListener('hashchange', () => {
-  content.innerHTML = '';
-  contentChange();
-});
-
-window.addEventListener('load', () => {
-  contentChange();
-});
+window.addEventListener('hashchange', contentChange);
+window.addEventListener('load', contentChange);
