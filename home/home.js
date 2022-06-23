@@ -9,7 +9,7 @@ export const home = () => {
 
   <section class='text-content'>
     <p>
-      Converse, <span>descubra</span> e <span>compartilhe</span> seus filmes
+      Converse, descubra e compartilhe seus filmes
       e séries favoritos
     </p>
     <p class='text-participate'>
@@ -17,17 +17,13 @@ export const home = () => {
     </p>
   </section>
 
-  <div class='home-container'>
-    <a href='#register' class='button button-register'>Participar</a>
-  </div>
-
-  <div class='container-image'>
+  <div class="container-image">
     <img
       src='img/img-home.svg'
       class='home-image'
       alt='Homem no sofá, com um balde de pipoca e óculos 3D.'
     />
-  </div>
+    </div>
 </article>
     `;
   homeContainer.innerHTML = templateHome;

@@ -17,6 +17,8 @@ body {
   font-family: "Alice", sans-serif;
   background-color: var(--brown);
   color: var(--white);
+  width: 100%;
+  height: 100vh;
 }
 
 .nav {
@@ -47,8 +49,9 @@ body {
 .text-participate {
   margin-top: 2em;
   display: flex;
-  justify-content: center;
   font-size: smaller;
+  align-items: center;
+  justify-content: space-evenly;
 }
 
 .subtitle {
@@ -100,7 +103,6 @@ body {
 .back-container {
   display: flex;
   justify-content: center;
-  margin-top: 3em;
   margin-bottom: 4em;
 }
 
@@ -135,7 +137,6 @@ body {
 .feedback {
   display: flex;
   justify-content: center;
-  margin-top: 2em;
 }
 
 .feedback.send {
@@ -144,4 +145,15 @@ body {
 
 .feedback.error {
   color: red;
+  margin-top: 1em;
+}
+
+.credit-name {
+  color: var(--pink);
+  display: flex;
+  justify-content: space-around;
+}
+
+.credit {
+  flex-wrap: wrap;
 }

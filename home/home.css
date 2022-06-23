@@ -8,19 +8,14 @@
   margin: 2em 1em 2em;
 }
 
-p > span {
-  color: var(--pink);
-}
-
 .home-container {
   display: flex;
   justify-content: center;
 }
 
-.container-image {
+.container-image{
   display: flex;
   justify-content: center;
-  margin-top: 1em;
 }
 
 .home-image {
@@ -37,4 +32,9 @@ p > span {
 .image-github {
   width: 2em;
   clip-path: circle(50%);
+}
+
+.footer{
+  position: absolute;
+  width: 100%;
 }

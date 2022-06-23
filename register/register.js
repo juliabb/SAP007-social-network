@@ -1,5 +1,6 @@
-import '../firebase/firebase.js';
+import '../firebase/initialize-firebase.js';
 import { userCreate, googleLogin } from '../firebase/auth-firebase.js';
+import { errors } from '../error/error.js';
 
 export const register = () => {
   const registerContainer = document.createElement('div');
@@ -33,7 +34,7 @@ export const register = () => {
           required
         />
 
-        <div class='home-container login-container'>
+        <div class='home-container'>
           <button
             id='register-enter'
             class='button register-enter login-enter'
@@ -54,7 +55,6 @@ export const register = () => {
           </button>
         </div>
       </form>
-      <div class='social-media'></div>
       <div class='back-container'>
         <a href='#home' class='back-home'>Voltar a tela inicial</a>
       </div>
@@ -75,18 +75,9 @@ export const register = () => {
         window.location.hash = '#timeline';
       })
       .catch((error) => {
-        const errorCode = error.code;
         feedback.classList.add('error');
-        switch (errorCode) {
-          case 'auth/invalid-email':
-            feedback.innerHTML = 'Email inválido';
-            break;
-          case 'auth/email-already-exists':
-            feedback.innerHTML = 'Este email já esta em uso';
-            break;
-          default:
-            feedback.innerHTML = 'Não foi possível realizar seu cadastro';
-        }
+        const messageError = errors(error.code);
+        feedback.innerHTML = (messageError);
         const errorMessage = error.message;
         return errorMessage;
       });

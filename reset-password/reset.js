@@ -1,5 +1,5 @@
-import '../firebase/firebase.js';
 import { resetPassword } from '../firebase/auth-firebase.js';
+import { errors } from '../error/error.js';
 
 export const reset = () => {
   const resetContainer = document.createElement('div');
@@ -43,19 +43,11 @@ export const reset = () => {
         feedback.classList.add('send');
         feedback.innerHTML = 'E-mail para redefinição de senha enviado! Verifique seu e-mail';
       }).catch((error) => {
-        const errorCode = error.code;
-        feedback.classList.remove('send');
         feedback.classList.add('error');
-        switch (errorCode) {
-          case 'auth/invalid-email':
-            feedback.innerHTML = 'Email inválido';
-            break;
-          case 'auth/user-not-found':
-            feedback.innerHTML = 'Usuário não encontrado';
-            break;
-          default:
-            feedback.innerHTML = 'Não será possível recuperar sua senha';
-        }
+        const messageError = errors(error.code);
+        feedback.innerHTML = (messageError);
+        const errorMessage = error.message;
+        return errorMessage;
       });
   });
   return resetContainer;

@@ -1,6 +1,6 @@
 import { auth } from '../firebase/auth-firebase.js';
 import { like, dislike } from '../firebase/firestore.js';
-import { modalDeletePost, modalEditPost } from './modal.js';
+import { modalDeletePost, modalEditPost } from '../modal/modal.js';
 
 export function templatePostFeed(item) {
   const isPostOwner = item.userEmail === auth.currentUser.email;
