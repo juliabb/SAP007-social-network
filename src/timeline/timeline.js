@@ -1,11 +1,13 @@
-import { auth, userLogout } from '../firebase/auth-firebase.js';
+// src\timeline\timeline.js
+import { auth } from '../firebase/initialize-firebase.js';
+import { userLogout } from '../firebase/auth-firebase.js';
 import { addPosts, orderPosts } from '../firebase/firestore.js';
 import { templatePostFeed } from './template-posts.js';
 
 export const timeline = () => {
   const feedCreate = document.createElement('div');
   const templateFeed = `
-      <main class='header-home'>
+      <main class='timeline-container'>
 
       <div class='getout-container'>
       <button id='button-getout' class='button btn-getout'>Sair</button>
@@ -17,9 +19,10 @@ export const timeline = () => {
       <textarea id='message' class='text-writing' maxlength='300' placeholder='Compartilhe sua experiência com filmes e séries aqui'></textarea>
       </div>
 
-      <div class='post-container getout-container'>
+      <div class='post-container'>
       <button id='buttonPost' class='button-submit-feed button'>Publicar</button>
       </div>
+
     
       <div class='posts-container'>
         <section id='new-post-user' class='all-post'></section>

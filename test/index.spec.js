@@ -9,7 +9,7 @@ import { register } from '../src/register/register.js';
 import { login } from '../src/login/login.js';
 
 jest.mock('../src/firebase/auth-firebase.js');
-jest.mock('../src/firebase/export.js');
+jest.mock('../src/firebase/firebase.js');
 
 describe('userCreate', () => {
   it('Deverá ser uma função', () => {

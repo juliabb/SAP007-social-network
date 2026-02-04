@@ -1,3 +1,4 @@
+/* src\css\global.css */
 @import url("https://fonts.googleapis.com/css2?family=Alice&display=swap");
 
 * {
@@ -14,11 +15,16 @@
 }
 
 body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   font-family: "Alice", sans-serif;
   background-color: var(--brown);
   color: var(--white);
-  width: 100%;
-  height: 100vh;
+}
+
+#root {
+  flex: 1;
 }
 
 .nav {
@@ -50,8 +56,8 @@ body {
   margin-top: 2em;
   display: flex;
   font-size: smaller;
-  align-items: center;
-  justify-content: space-evenly;
+  /* align-items: center;
+  justify-content: space-evenly; */
 }
 
 .subtitle {
@@ -156,4 +162,98 @@ body {
 
 .credit {
   flex-wrap: wrap;
+}
+
+.auth-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5em;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 380px;
+  background-color: rgba(255, 255, 255, 0.03);
+  border-radius: 8px;
+  padding: 2em 1.5em;
+  text-align: center;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.input-names {
+  width: 100%;
+  margin: 0;
+}
+
+.login-enter {
+  margin-top: 1em;
+  padding: 10px;
+  font-size: 1rem;
+}
+
+.text-forgot {
+  font-size: 0.9rem;
+}
+
+.text-register {
+  margin-top: 1.5em;
+  font-size: 0.9rem;
+}
+
+.back-home {
+  display: block;
+  margin-top: 1.5em;
+  font-size: 0.85rem;
+}
+
+.auth-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5em;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 380px;
+  background-color: rgba(255, 255, 255, 0.03);
+  border-radius: 8px;
+  padding: 2em 1.5em;
+  text-align: center;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.input-names {
+  width: 100%;
+  margin: 0;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background-color: var(--white);
+  opacity: 0.3;
 }

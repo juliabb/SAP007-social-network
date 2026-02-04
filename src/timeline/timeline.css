@@ -1,3 +1,4 @@
+/* src\timeline\timeline.css */
 :root {
   --pink: #da4871;
   --pink-hover: #f43e89;
@@ -25,9 +26,17 @@
 }
 
 .post-container {
-  margin-top: 1em;
-  margin-right: 15%;
-  margin-bottom: 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+  padding: 1em;
+}
+
+.posts-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .post-div {
@@ -35,6 +44,16 @@
   background: var(--white);
   margin: 1em 2em;
   border-radius: 4px;
+}
+
+.post-card {
+  background-color: var(--white);
+  color: var(--brown);
+  border-radius: 8px;
+  padding: 1em;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .modal-buttons {
@@ -59,14 +78,14 @@
 }
 
 .user-img {
-  width: 25px;
-  margin: 1em 0.2em auto 0.5em;
+  width: 36px;
+  height: 36px;
   clip-path: circle(50%);
 }
 
 .user-info {
   display: flex;
-  align-items: center;
+  gap: 0.5em;
 }
 
 .items-organization {
@@ -77,16 +96,19 @@
 }
 
 .user-email {
-  font-size: 12px;
-  margin-top: 1em;
+  font-size: 0.8rem;
+  font-weight: bold;
 }
 
-.message-feed {
+.post-header {
   display: flex;
-  justify-content: flex-start;
-  word-break: break-word;
-  margin: 1em;
-  font-size: 15px;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.post-date {
+  font-size: 0.7rem;
+  opacity: 0.6;
 }
 
 .like-container {
@@ -94,17 +116,75 @@
   justify-content: flex-end;
 }
 
-.button-like {
-  display: flex;
-  background: transparent;
-  border: none;
-  align-items: center;
-  margin-bottom: 1em;
-  justify-content: center;
-}
-
 .like-icon {
   width: 40%;
   cursor: pointer;
   user-select: none;
+}
+
+.post-actions {
+  display: flex;
+  gap: 0.3em;
+}
+
+.icon-button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.icon-button img {
+  width: 18px;
+  opacity: 0.6;
+}
+
+.icon-button:hover img {
+  opacity: 1;
+}
+
+.message-feed {
+  margin: 1em 0;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  word-break: break-word;
+}
+
+
+.post-footer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.like-icon {
+  width: 22px;
+}
+
+.button-like {
+  margin-bottom: 1em;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  gap: 0.3em;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.button-like:hover .like-icon {
+  transform: scale(1.1);
+}
+
+.all-post {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+  width: 100%;
+}
+
+.timeline-container {
+  min-height: calc(100vh - 120px);
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
 }

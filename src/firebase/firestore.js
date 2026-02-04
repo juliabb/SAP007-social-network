@@ -1,7 +1,7 @@
+// src/firebase/firestore.js
 import {
   collection,
   addDoc,
-  getFirestore,
   getDocs,
   orderBy,
   query,
@@ -12,7 +12,7 @@ import {
   arrayRemove,
 } from './export.js';
 
-const db = getFirestore();
+import { db } from './initialize-firebase.js';
 
 export async function addPosts(message, userEmail) {
   try {

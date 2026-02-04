@@ -4,7 +4,7 @@ import { errors } from '../error/error.js';
 export const reset = () => {
   const resetContainer = document.createElement('div');
   const templateReset = `
-  <section class='header-home'>
+  <section class='home-container'>
     <h2 class='subtitle'>Esqueci a senha</h2>
     <section class='text-content'>
       <p class='text-reset'>Uma nova senha será enviada

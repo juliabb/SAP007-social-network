@@ -1,6 +1,6 @@
-// eslint-disable-next-line
+/* eslint-disable max-len */
+// src/firebase/auth-firebase.js
 import {
-  getAuth,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   GoogleAuthProvider,
@@ -8,34 +8,25 @@ import {
   sendPasswordResetEmail,
   signOut,
   onAuthStateChanged,
-} from './export.js'; // eslint-disable-line
+} from './export.js';
 
-export const auth = getAuth();
+import { auth } from './initialize-firebase.js';
+
 const provider = new GoogleAuthProvider();
 
 export function userCreate(email, password) {
   return createUserWithEmailAndPassword(auth, email, password).then(
-    (userCredential) => {
-      const user = userCredential.user;
-      return user;
-    },
+    (userCredential) => userCredential.user,
   );
 }
 
 export function userLogin(email, password) {
   return signInWithEmailAndPassword(auth, email, password).then(
-    (userCredential) => {
-      const user = userCredential.user;
-      return user;
-    },
+    (userCredential) => userCredential.user,
   );
 }
 
-export const googleLogin = () => signInWithPopup(auth, provider)
-  .then((result) => {
-    const credential = GoogleAuthProvider.credentialFromResult(result);
-    return credential;
-  });
+export const googleLogin = () => signInWithPopup(auth, provider).then((result) => GoogleAuthProvider.credentialFromResult(result));
 
 export const resetPassword = (email) => sendPasswordResetEmail(auth, email);
 
