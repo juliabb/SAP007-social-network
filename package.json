@@ -38,6 +38,6 @@
     "node": ">=14"
   },
   "dependencies": {
-    "firebase": "^9.6.9"
+    "firebase": "^9.23.0"
   }
 }

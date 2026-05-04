@@ -7,7 +7,6 @@ import { getFirestore } from 'https://www.gstatic.com/firebasejs/9.6.9/firebase-
 const firebaseConfig = {
   apiKey: 'AIzaSyDJjWL2e8l_0r54ReH9eZc6PWxcqaIHpxQ',
   authDomain: 'mirama-social-network.firebaseapp.com',
-  databaseURL: 'https://mirama-social-network-default-rtdb.firebaseio.com',
   projectId: 'mirama-social-network',
   storageBucket: 'mirama-social-network.appspot.com',
   messagingSenderId: '887687261584',
