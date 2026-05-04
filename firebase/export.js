@@ -1,3 +1,4 @@
+// src\firebase\export.js
 export {
   getAuth,
   createUserWithEmailAndPassword,

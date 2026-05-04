@@ -8,4 +8,3 @@ export const signOut = jest.fn();
 export const initializeApp = jest.fn();
 export const getFirestore = jest.fn();
 export const sendPasswordResetEmail = jest.fn();
-export const resetPassword = jest.fn();

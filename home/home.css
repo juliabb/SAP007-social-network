@@ -1,40 +1,112 @@
-.home-buttons {
-  justify-content: space-evenly;
-  margin-top: 2em;
-  flex-direction: row;
-}
-
-.text-content {
-  margin: 2em 1em 2em;
-}
-
+/* ─── HOME PAGE ───────────────────────────────── */
 .home-container {
+  flex: 1;
   display: flex;
+  align-items: center;
   justify-content: center;
+  padding: 2rem 1.5rem;
+  min-height: calc(100vh - 72px);
 }
 
-.container-image{
+.home {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+  width: 100%;
+  max-width: 1100px;
+  text-align: center;
+}
+
+.home-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  order: 2;
+}
+
+.home-right {
+  order: 1;
 }
 
 .home-image {
-  width: 13em;
-}
-
-.social-media {
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  margin-top: 0.5em;
-}
-
-.image-github {
-  width: 2em;
-  clip-path: circle(50%);
-}
-
-.footer{
-  position: absolute;
   width: 100%;
+  max-width: 240px;
+  filter: drop-shadow(0 0 40px rgba(232, 69, 106, 0.25));
+}
+
+/* tagline */
+.text-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.text-content > p:first-child {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(1.4rem, 4vw, 2.1rem);
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--white);
+}
+
+.text-participate {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-top: 0;
+}
+
+/* buttons */
+.home-buttons {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.home-buttons .button:last-child {
+  background: transparent;
+  border: 1px solid var(--pink);
+  color: var(--pink);
+}
+.home-buttons .button:last-child:hover {
+  background: var(--pink-dim);
+  box-shadow: none;
+}
+
+/* ─── DESKTOP ─────────────────────────────────── */
+@media (min-width: 768px) {
+  .home {
+    flex-direction: row;
+    text-align: left;
+    gap: 4rem;
+    justify-content: center;
+  }
+
+  .home-left {
+    align-items: flex-start;
+    order: 1;
+    flex: 1;
+    max-width: 480px;
+  }
+
+  .home-right {
+    order: 2;
+    flex: 0 0 auto;
+  }
+
+  .home-image {
+    max-width: 360px;
+  }
+
+  .home-buttons {
+    justify-content: flex-start;
+  }
+}
+
+@media (min-width: 1024px) {
+  .home-image {
+    max-width: 420px;
+  }
 }

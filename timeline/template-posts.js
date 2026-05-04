@@ -1,35 +1,44 @@
-import { auth } from '../firebase/auth-firebase.js';
+// src\timeline\template-posts.js
+import { auth } from '../firebase/initialize-firebase.js';
 import { like, dislike } from '../firebase/firestore.js';
 import { modalDeletePost, modalEditPost } from '../modal/modal.js';
 
 export function templatePostFeed(item) {
   const isPostOwner = item.userEmail === auth.currentUser.email;
-  const container = document.createElement('section');
+  const container = document.createElement('article');
+  container.classList.add('post-card');
 
-  const postCreate = `
-    <div class='post-div'>
-      ${isPostOwner ? `
-      <div class='icons-container'>
-      <button class='modal-buttons' id='modal-btn-edit'><img class='icon-img' src='./img/icon-lapis.png'>Editar</button>
-      <button class='modal-buttons'  id='modal-btn-delete'><img class='icon-img' src='./img/icon-lixo.png'>Excluir</button>
-      </div>` : ''}
-      <div class='user-info'>
-        <img class='user-img icon-img' src='./img/perfil.png'/>
-          <p class='user-email'>${item.userEmail}</p>
-          </div>
-        <div class='items-organization'>
-          <p>${item.date}</p>
+  container.innerHTML = `
+    <header class="post-header">
+      <div class="user-info">
+        <img class="user-img" src="./img/perfil.png" />
+        <div>
+          <p class="user-email">${item.userEmail}</p>
+          <span class="post-date">${item.date}</span>
         </div>
-          <p id='message' class='message-feed'>${item.message}</p>
-            <div class='like-container'>
-              <button id='button-like' class='button-like'>
-                <img class='like-icon like' src='./img/icon-pipoca-like.svg'/>
-            <p id='num-likes' class='num-likes'>${item.likes.length}</p>
-            </button>
-            </div>
-    </div>`;
+      </div>
 
-  container.innerHTML = postCreate;
+      ${isPostOwner ? `
+        <div class="post-actions">
+          <button class="icon-button" id="modal-btn-edit" title="Editar">
+            <img src="./img/icon-lapis.png" />
+          </button>
+          <button class="icon-button" id="modal-btn-delete" title="Excluir">
+            <img src="./img/icon-lixo.png" />
+          </button>
+        </div>
+      ` : ''}
+    </header>
+
+    <p class="message-feed">${item.message}</p>
+
+    <footer class="post-footer">
+      <button id="button-like" class="button-like">
+        <img class="like-icon" src="./img/icon-pipoca-like.svg"/>
+        <span id="num-likes">${item.likes.length}</span>
+      </button>
+    </footer>
+  `;
 
   if (isPostOwner) {
     const deletePost = container.querySelector('#modal-btn-delete');
@@ -59,7 +68,9 @@ export function templatePostFeed(item) {
       });
     } else {
       dislike(item.id, auth.currentUser.email).then(() => {
-        postLike.splice(auth.currentUser.email);
+        const index = postLike.indexOf(auth.currentUser.email);
+        postLike.splice(index, 1);
+
         const addLikeNum = Number(countLikes.innerHTML) - 1;
         countLikes.innerHTML = addLikeNum;
       });
