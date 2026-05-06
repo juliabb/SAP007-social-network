@@ -5,7 +5,7 @@ import { getAuth } from 'https://www.gstatic.com/firebasejs/9.6.9/firebase-auth.
 import { getFirestore } from 'https://www.gstatic.com/firebasejs/9.6.9/firebase-firestore.js';
 
 const firebaseConfig = {
-  apiKey: 'AIzaSyDJjWL2e8l_0r54ReH9eZc6PWxcqaIHpxQ',
+  apiKey: 'AIzaSyAGrWsT7kTZ2_UtPKCFzMleOBr3TCZ3dA8',
   authDomain: 'mirama-social-network.firebaseapp.com',
   projectId: 'mirama-social-network',
   storageBucket: 'mirama-social-network.appspot.com',
