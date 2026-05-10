@@ -1,4 +1,4 @@
-// src\firebase\export.js
+// src/firebase/export.js
 export {
   getAuth,
   createUserWithEmailAndPassword,
@@ -8,21 +8,35 @@ export {
   onAuthStateChanged,
   signOut,
   sendPasswordResetEmail,
-} from 'https://www.gstatic.com/firebasejs/9.6.9/firebase-auth.js'; //eslint-disable-line
+} from 'https://www.gstatic.com/firebasejs/9.6.9/firebase-auth.js';
 
-export { initializeApp } from 'https://www.gstatic.com/firebasejs/9.6.9/firebase-app.js'; //eslint-disable-line
+export { initializeApp } from 'https://www.gstatic.com/firebasejs/9.6.9/firebase-app.js';
 
 export {
   getFirestore,
   collection,
   addDoc,
   getDocs,
-  orderBy,
-  query,
+  getDoc,
+  setDoc,
+  updateDoc,
   deleteDoc,
   doc,
-  updateDoc,
+  query,
+  where,
+  orderBy,
+  limit,
+  startAfter,
+  serverTimestamp,
   arrayUnion,
   arrayRemove,
-} from // eslint-disable-next-line import/no-unresolved
-  'https://www.gstatic.com/firebasejs/9.6.9/firebase-firestore.js';
+  writeBatch
+} from 'https://www.gstatic.com/firebasejs/9.6.9/firebase-firestore.js';
+
+export {
+  getStorage,
+  ref,
+  uploadBytes,
+  getDownloadURL,
+  deleteObject,
+} from 'https://www.gstatic.com/firebasejs/9.6.9/firebase-storage.js';

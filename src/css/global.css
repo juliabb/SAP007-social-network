@@ -23,6 +23,7 @@
   --transition:   0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+
 body {
   min-height: 100vh;
   display: flex;
@@ -37,6 +38,13 @@ body {
   flex: 1;
   display: flex;
   flex-direction: column;
+}
+
+#root,
+body,
+.timeline-wrapper,
+.feed-center {
+  overflow: visible !important;
 }
 
 /* ─── NAV ─────────────────────────────────────── */
@@ -280,4 +288,50 @@ body {
   color: #ff6b6b;
   margin-top: 0.5rem;
   text-align: center;
+}
+
+/* ─── Área de upload do avatar ─────────────── */
+.avatar-upload-area {
+  margin: 0.5rem 0;
+}
+
+.avatar-upload-preview {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.3rem;
+}
+
+.avatar-upload-preview img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--border);
+}
+
+.avatar-upload-controls {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.button-upload {
+  background: var(--pink);
+  color: white;
+  border: none;
+  padding: 0.45rem 1rem;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-size: 0.82rem;
+}
+
+.button-upload:hover {
+  background: #c93a5a;
+}
+
+.avatar-help {
+  display: block;
+  font-size: 0.7rem;
+  color: var(--muted);
+  margin-top: 0.3rem;
 }

@@ -1,8 +1,8 @@
 // src\firebase\initialize-firebase.js
-/* eslint-disable import/no-unresolved */
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.6.9/firebase-app.js';
 import { getAuth } from 'https://www.gstatic.com/firebasejs/9.6.9/firebase-auth.js';
 import { getFirestore } from 'https://www.gstatic.com/firebasejs/9.6.9/firebase-firestore.js';
+import { getStorage } from 'https://www.gstatic.com/firebasejs/9.6.9/firebase-storage.js';
 
 const firebaseConfig = {
   apiKey: 'AIzaSyAGrWsT7kTZ2_UtPKCFzMleOBr3TCZ3dA8',
@@ -18,3 +18,4 @@ const app = initializeApp(firebaseConfig);
 
 export const auth = getAuth(app);
 export const db = getFirestore(app);
+export const storage = getStorage(app);

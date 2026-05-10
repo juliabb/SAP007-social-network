@@ -1,3 +1,4 @@
+// src\firebase\__mocks__\firebase.js
 export const getAuth = jest.fn();
 export const createUserWithEmailAndPassword = jest.fn();
 export const signInWithEmailAndPassword = jest.fn();
