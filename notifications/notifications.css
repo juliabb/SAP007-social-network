@@ -1,0 +1,208 @@
+/* ═══════════════════════════════════════════════
+   NOTIFICATIONS PAGE
+═══════════════════════════════════════════════ */
+
+.notifications-page {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  background: var(--bg);
+}
+
+.notifications-container {
+  width: 100%;
+  max-width: 640px;
+  border-left: 1px solid var(--border);
+  border-right: 1px solid var(--border);
+  min-height: 100vh;
+  background: var(--bg);
+}
+
+/* ─── HEADER ────────────────────────────────── */
+
+.notifications-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  backdrop-filter: blur(14px);
+  background: rgba(15, 15, 15, 0.82);
+  border-bottom: 1px solid var(--border);
+  padding: 1.25rem 1.5rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.notifications-header h1 {
+  font-size: 1.4rem;
+  color: var(--white);
+  font-family: "Playfair Display", serif;
+  margin-bottom: 0.2rem;
+}
+
+.notifications-header p {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.button-notification-read {
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--white);
+  padding: 0.55rem 1rem;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 0.82rem;
+  transition:
+    background var(--transition),
+    border-color var(--transition);
+}
+
+.button-notification-read:hover {
+  background: var(--bg-surface);
+  border-color: var(--border-hover);
+}
+
+/* ─── LIST ──────────────────────────────────── */
+
+.notifications-list {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ─── ITEM ──────────────────────────────────── */
+
+.notification-item {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--border);
+
+  transition: background var(--transition);
+  cursor: pointer;
+}
+
+.notification-item:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.notification-item.unread {
+  background: rgba(232, 69, 106, 0.06);
+}
+
+.notification-item.unread:hover {
+  background: rgba(232, 69, 106, 0.1);
+}
+
+/* ─── TEXTO ─────────────────────────────────── */
+
+.notif-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: var(--white);
+}
+
+.notif-text strong {
+  color: var(--pink);
+  font-weight: 600;
+}
+
+.notif-time {
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+/* ─── BOTÃO ─────────────────────────────────── */
+
+.notif-goto {
+  flex-shrink: 0;
+
+  border: none;
+  background: var(--pink);
+  color: white;
+
+  padding: 0.5rem 0.9rem;
+  border-radius: 999px;
+
+  font-size: 0.78rem;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition:
+    opacity var(--transition),
+    transform var(--transition);
+}
+
+.notif-goto:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+/* ─── EMPTY ─────────────────────────────────── */
+
+.empty {
+  text-align: center;
+  color: var(--muted);
+  padding: 4rem 1.5rem;
+  font-size: 0.92rem;
+}
+
+/* ─── LOADING ───────────────────────────────── */
+
+.notifications-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+
+  padding: 4rem 1rem;
+  color: var(--muted);
+}
+
+.notifications-loading span {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 3px solid rgba(255, 255, 255, 0.1);
+  border-top-color: var(--pink);
+
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ─── MOBILE ────────────────────────────────── */
+
+@media (max-width: 640px) {
+  .notifications-header {
+    padding: 1rem;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .notification-item {
+    padding: 1rem;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .notif-goto {
+    width: 100%;
+  }
+}
